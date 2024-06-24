@@ -2,8 +2,8 @@
 
 ## TODO
 
-- [ ] Make it deploy
-- [ ] Install DaisyUI
+- [x] Make it deploy
+- [x] Install DaisyUI
 - [ ] Scaffold UI
 - [ ] Dark theme
 - [ ] Analytics
