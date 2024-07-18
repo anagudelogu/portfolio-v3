@@ -7,7 +7,17 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        rubik: ['var(--font-rubik)'],
+        syne: ['var(--font-syne)'],
+      },
+      colors: {
+        primary: 'rgb(66,99,248)',
+      },
+    },
+  },
   plugins: [daisyui],
   daisyui: {
     themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
