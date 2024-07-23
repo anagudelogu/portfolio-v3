@@ -19,8 +19,8 @@ export default function ExperienceCard({
   date,
 }: ExperienceCardProps) {
   return (
-    <article className='bg-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px]'>
-      <header className='mb-5'>
+    <article className='bg-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px] xl:px-10 xl:py-8'>
+      <header className='mb-5 xl:mb-7'>
         <Image
           src={logoSrc}
           alt={`${company} logo`}
@@ -28,15 +28,15 @@ export default function ExperienceCard({
           height={24}
           width={24}
         />
-        <h4 className='text-sm flex justify-between items-center'>
+        <h4 className='text-sm flex justify-between items-center xl:text-base'>
           {role}
-          <span className='text-xs'>{date}</span>
+          <span className='text-xs xl:text-sm'>{date}</span>
         </h4>
-        <h3 className='font-bold text-3xl'>{company}</h3>
-        <h5 className='text-xs'>{techStack}</h5>
+        <h3 className='font-bold text-3xl xl:text-4xl'>{company}</h3>
+        <h5 className='text-xs xl:text-sm'>{techStack}</h5>
       </header>
 
-      <ul className='text-sm flex flex-col gap-3'>{children}</ul>
+      <ul className='text-sm flex flex-col gap-3 xl:text-base'>{children}</ul>
     </article>
   );
 }

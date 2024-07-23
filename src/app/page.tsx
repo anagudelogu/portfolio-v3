@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className='mt-16'>
+    <main className='mt-16 max-w-7xl mx-auto'>
       <section
         id='about'
-        className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20'
+        className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20 xl:px-20'
       >
         <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8 lg:text-left'>
-          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl lg:text-4xl'>
+          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl lg:text-4xl xl:text-6xl'>
             Frontend Developer
           </h1>
-          <p className='md:text-lg lg:text-base'>
+          <p className='md:text-lg lg:text-base xl:text-lg'>
             Hi there! I&apos;m a Frontend Developer with two years of
             experience, passionate about crafting user-friendly interfaces and
             exploring cutting-edge web technologies. I thrive in remote work
@@ -51,14 +51,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='experience' className='px-6 pb-12 scroll-mt-20 md:px-10'>
-        <h2 className='font-syne font-bold text-4xl text-center mb-5 md:text-5xl md:mb-8'>
+      <section
+        id='experience'
+        className='px-6 pb-12 scroll-mt-20 md:px-10 xl:px-20 xl:pb-20'
+      >
+        <h2 className='font-syne font-bold text-4xl text-center mb-5 md:text-5xl md:mb-8 xl:text-6xl'>
           Experience
         </h2>
 
         <ul className='flex flex-col gap-5 max-w-lg mx-auto lg:grid lg:grid-cols-2 lg:max-w-none lg:gap-x-8 lg:gap-y-16'>
           <li className='lg:col-span-2'>
-            <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2'>
+            <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2 xl:px-16 xl:py-12 xl:gap-10'>
               <div className='flex flex-col gap-5'>
                 <header>
                   <Image
@@ -67,17 +70,19 @@ export default function Home() {
                     className='mb-3'
                     height={24}
                   />
-                  <h4 className='text-sm flex justify-between items-center'>
+                  <h4 className='text-sm flex justify-between items-center xl:text-base'>
                     Frontend Developer
-                    <span className='text-xs'>Oct, 2023 - Jun, 2024</span>
+                    <span className='text-xs xl:text-sm'>
+                      Oct, 2023 - Jun, 2024
+                    </span>
                   </h4>
-                  <h3 className='font-bold text-4xl'>Solenium</h3>
-                  <h5 className='text-xs'>
+                  <h3 className='font-bold text-4xl xl:text-5xl'>Solenium</h3>
+                  <h5 className='text-xs xl:text-sm'>
                     Vue, TypeScript, Nuxt, TailwindCSS
                   </h5>
                 </header>
 
-                <ul className='text-sm flex flex-col gap-3'>
+                <ul className='text-sm flex flex-col gap-3 xl:text-base'>
                   <li>
                     <p>
                       Revamped the entire landing page by integrating
@@ -158,7 +163,7 @@ export default function Home() {
 
       <footer
         id='contact'
-        className='px-6 text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20 md:px-10 lg:text-left lg:gap-12 lg:pb-20'
+        className='px-6 text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20 md:px-10 lg:text-left lg:gap-12 lg:pb-20 xl:px-20 xl:gap-20'
       >
         <div>
           <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl lg:text-3xl'>
