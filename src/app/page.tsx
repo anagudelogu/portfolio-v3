@@ -18,12 +18,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className='mt-16'>
-      <section id='about' className='px-6 py-12 scroll-mt-20 md:px-10'>
-        <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8'>
-          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl'>
+      <section
+        id='about'
+        className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20'
+      >
+        <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8 lg:text-left'>
+          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl lg:text-4xl'>
             Frontend Developer
           </h1>
-          <p className='md:text-lg'>
+          <p className='md:text-lg lg:text-base'>
             Hi there! I&apos;m a Frontend Developer with two years of
             experience, passionate about crafting user-friendly interfaces and
             exploring cutting-edge web technologies. I thrive in remote work
@@ -33,13 +36,18 @@ export default function Home() {
             portfolio to see some of my work, and let&apos;s connect to create
             something amazing!
           </p>
-          <div className='w-9/12 mx-auto md:max-w-96'>
+          <div className='w-9/12 mx-auto md:max-w-96 lg:mx-0'>
             <DownloadResumeBtn outlined />
           </div>
         </div>
 
-        <div className='rounded-2xl overflow-hidden w-fit mx-auto'>
-          <Image src={aboutMe} alt='About me' placeholder='blur' />
+        <div className='rounded-2xl overflow-hidden w-fit h-fit mx-auto lg:self-center lg:mr-0'>
+          <Image
+            src={aboutMe}
+            alt='About me'
+            placeholder='blur'
+            className='lg:h-auto lg:w-96'
+          />
         </div>
       </section>
 
@@ -48,53 +56,57 @@ export default function Home() {
           Experience
         </h2>
 
-        <ul className='flex flex-col gap-5 max-w-lg mx-auto'>
-          <li>
-            <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5'>
-              <header>
-                <Image
-                  src={soleniumLogo}
-                  alt='Solenium logo'
-                  className='mb-3'
-                  height={24}
-                />
-                <h4 className='text-sm flex justify-between items-center'>
-                  Frontend Developer
-                  <span className='text-xs'>Oct, 2023 - Jun, 2024</span>
-                </h4>
-                <h3 className='font-bold text-4xl'>Solenium</h3>
-                <h5 className='text-xs'>Vue, TypeScript, Nuxt, TailwindCSS</h5>
-              </header>
+        <ul className='flex flex-col gap-5 max-w-lg mx-auto lg:grid lg:grid-cols-2 lg:max-w-none lg:gap-x-8 lg:gap-y-16'>
+          <li className='lg:col-span-2'>
+            <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2'>
+              <div className='flex flex-col gap-5'>
+                <header>
+                  <Image
+                    src={soleniumLogo}
+                    alt='Solenium logo'
+                    className='mb-3'
+                    height={24}
+                  />
+                  <h4 className='text-sm flex justify-between items-center'>
+                    Frontend Developer
+                    <span className='text-xs'>Oct, 2023 - Jun, 2024</span>
+                  </h4>
+                  <h3 className='font-bold text-4xl'>Solenium</h3>
+                  <h5 className='text-xs'>
+                    Vue, TypeScript, Nuxt, TailwindCSS
+                  </h5>
+                </header>
 
-              <ul className='text-sm flex flex-col gap-3'>
-                <li>
-                  <p>
-                    Revamped the entire landing page by integrating cutting-edge
-                    technologies and implementing a fresh design, resulting in a
-                    significant SEO improvement and a 140% increase in organic
-                    traffic within the first month.
-                  </p>
-                </li>
+                <ul className='text-sm flex flex-col gap-3'>
+                  <li>
+                    <p>
+                      Revamped the entire landing page by integrating
+                      cutting-edge technologies and implementing a fresh design,
+                      resulting in a significant SEO improvement and a 140%
+                      increase in organic traffic within the first month.
+                    </p>
+                  </li>
 
-                <li>
-                  <p>
-                    Started the development of an app for monitoring energy
-                    border meters, enhancing operational efficiency by
-                    streamlining data collection and analysis processes,
-                    projected to reduce manual monitoring time by 90%.
-                  </p>
-                </li>
+                  <li>
+                    <p>
+                      Started the development of an app for monitoring energy
+                      border meters, enhancing operational efficiency by
+                      streamlining data collection and analysis processes,
+                      projected to reduce manual monitoring time by 90%.
+                    </p>
+                  </li>
 
-                <li>
-                  <p>
-                    Worked closely with product and design team, to understand
-                    the business requirements and prioritize and scope work
-                    accordingly, for me and my peers.
-                  </p>
-                </li>
-              </ul>
+                  <li>
+                    <p>
+                      Worked closely with product and design team, to understand
+                      the business requirements and prioritize and scope work
+                      accordingly, for me and my peers.
+                    </p>
+                  </li>
+                </ul>
+              </div>
 
-              <div className='rounded-2xl overflow-hidden'>
+              <div className='rounded-2xl overflow-hidden w-fit h-fit lg:self-center'>
                 <Image
                   src={soleniumPreview}
                   alt='Solenium landing page'
@@ -146,19 +158,19 @@ export default function Home() {
 
       <footer
         id='contact'
-        className='text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20'
+        className='px-6 text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20 md:px-10 lg:text-left lg:gap-12 lg:pb-20'
       >
         <div>
-          <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl'>
+          <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl lg:text-3xl'>
             Want to hire me?
           </h3>
-          <h2 className='font-syne font-bold text-5xl md:text-6xl'>
+          <h2 className='font-syne font-bold text-5xl md:text-6xl lg:text-8xl'>
             Let&apos;s talk!
           </h2>
         </div>
 
-        <ul className='flex flex-col gap-2.5 md:text-lg'>
-          <li>
+        <ul className='flex flex-col gap-2.5 md:text-lg lg:text-xl lg:flex-row lg:justify-between'>
+          <li className='lg:order-2'>
             <a
               href='mailto:anagudelogu@gmail.com'
               className='flex justify-center items-center gap-1.5'
@@ -182,13 +194,13 @@ export default function Home() {
             </a>
           </li>
 
-          <li>
+          <li className='lg:order-1'>
             <Link href='https://www.linkedin.com/in/aagst/' target='_blank'>
               LinkedIn
             </Link>
           </li>
 
-          <li>
+          <li className='lg:order-3'>
             <Link href='https://github.com/anagudelogu' target='_blank'>
               GitHub
             </Link>

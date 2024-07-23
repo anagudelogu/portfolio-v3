@@ -19,7 +19,7 @@ export default function ExperienceCard({
   date,
 }: ExperienceCardProps) {
   return (
-    <article className='bg-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px] min-w-[342px]'>
+    <article className='bg-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px]'>
       <header className='mb-5'>
         <Image
           src={logoSrc}

@@ -10,7 +10,7 @@ export default function Sidebar() {
     setIsOpen(false);
   };
   return (
-    <div className='drawer-side mt-[65px]'>
+    <div className='drawer-side mt-[65px] lg:hidden'>
       <label
         htmlFor='my-drawer'
         aria-label='close sidebar'
