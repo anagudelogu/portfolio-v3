@@ -4,7 +4,9 @@
 
 - [x] Make it deploy
 - [x] Install DaisyUI
-- [ ] Scaffold Mobile UI
-- [ ] Responsive Desktop UI
+- [x] Scaffold Mobile UI
+- [x] Responsive Desktop UI
 - [ ] Dark theme
+- [ ] SEO
+- [ ] Language Switcher
 - [ ] Analytics
