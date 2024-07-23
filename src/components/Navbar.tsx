@@ -5,7 +5,7 @@ export default function Navbar() {
   const { isOpen, setIsOpen } = useDrawerContext();
 
   return (
-    <nav className='navbar shadow-sm shadow-[rgba(66,99,248,0.2)]'>
+    <nav className='navbar shadow-sm shadow-[rgba(66,99,248,0.2)] fixed top-0 bg-base-200'>
       <div className='flex-1'>
         <a className='btn btn-ghost text-primary font-syne font-bold text-3xl'>
           Andres Agudelo

@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <section className='px-6 py-12'>
+    <main className='mt-16'>
+      <section id='about' className='px-6 py-12 scroll-mt-20'>
         <div className='flex flex-col gap-5 text-neutral text-center mb-10'>
           <h1 className='font-syne font-bold text-4xl uppercase'>
             Frontend Developer
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='px-6 pb-12'>
+      <section id='experience' className='px-6 pb-12 scroll-mt-20'>
         <h2 className='font-syne font-bold text-4xl text-center mb-5'>
           Experience
         </h2>
@@ -144,7 +144,10 @@ export default function Home() {
         </ul>
       </section>
 
-      <footer className='text-center flex flex-col justify-center text-primary gap-5 pb-12'>
+      <footer
+        id='contact'
+        className='text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20'
+      >
         <div>
           <h3 className='text-neutral font-semibold text-xl mb-5'>
             Want to hire me?
@@ -168,9 +171,9 @@ export default function Home() {
                 <path
                   d='M18.625 6.44458V15.1946C18.625 15.6919 18.4275 16.1688 18.0758 16.5204C17.7242 16.872 17.2473 17.0696 16.75 17.0696H4.25C3.75272 17.0696 3.27581 16.872 2.92417 16.5204C2.57254 16.1688 2.375 15.6919 2.375 15.1946V6.44458M18.625 6.44458C18.625 5.9473 18.4275 5.47039 18.0758 5.11876C17.7242 4.76712 17.2473 4.56958 16.75 4.56958H4.25C3.75272 4.56958 3.27581 4.76712 2.92417 5.11876C2.57254 5.47039 2.375 5.9473 2.375 6.44458M18.625 6.44458V6.64708C18.625 6.9672 18.5431 7.282 18.387 7.56149C18.2309 7.84099 18.0059 8.07586 17.7333 8.24375L11.4833 12.0896C11.1877 12.2717 10.8472 12.3681 10.5 12.3681C10.1528 12.3681 9.81233 12.2717 9.51667 12.0896L3.26667 8.24458C2.9941 8.07669 2.76906 7.84182 2.61297 7.56233C2.45689 7.28283 2.37496 6.96803 2.375 6.64791V6.44458'
                   stroke='#4263F8'
-                  stroke-width='1.5'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
                 />
               </svg>
               Email

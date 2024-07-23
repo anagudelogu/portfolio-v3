@@ -1,7 +1,14 @@
+import Link from 'next/link';
 import DownloadResumeBtn from './DownloadResumeBtn';
 import ThemeSwitcher from './ThemeSwitcher';
+import { useDrawerContext } from '@/contexts/DrawerContext';
 
 export default function Sidebar() {
+  const { setIsOpen } = useDrawerContext();
+
+  const handleClick = () => {
+    setIsOpen(false);
+  };
   return (
     <div className='drawer-side mt-[65px]'>
       <label
@@ -11,13 +18,19 @@ export default function Sidebar() {
       ></label>
       <ul className='menu menu-lg bg-base-200 text-neutral text-lg font-semibold w-dvw p-4 h-[calc(100dvh-64px)] flex flex-col gap-4'>
         <li>
-          <a>About me</a>
+          <Link href='#about' onClick={handleClick}>
+            About me
+          </Link>
         </li>
         <li>
-          <a>Experience</a>
+          <Link href='#experience' onClick={handleClick}>
+            Experience
+          </Link>
         </li>
         <li>
-          <a>Contact</a>
+          <Link href='#contact' onClick={handleClick}>
+            Contact
+          </Link>
         </li>
 
         <li className='px-6'>
