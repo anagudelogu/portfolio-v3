@@ -15,8 +15,9 @@ export default function Sidebar() {
         htmlFor='my-drawer'
         aria-label='close sidebar'
         className='drawer-overlay'
+        onClick={() => setIsOpen(false)}
       ></label>
-      <ul className='menu menu-lg bg-base-200 text-neutral text-lg font-semibold w-dvw p-4 h-[calc(100dvh-64px)] flex flex-col gap-4'>
+      <ul className='menu menu-lg bg-base-200 text-neutral text-lg font-semibold w-dvw p-4 h-[calc(100dvh-64px)] flex flex-col gap-4 sm:w-96'>
         <li>
           <Link href='#about' onClick={handleClick}>
             About me

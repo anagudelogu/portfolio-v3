@@ -18,12 +18,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className='mt-16'>
-      <section id='about' className='px-6 py-12 scroll-mt-20'>
-        <div className='flex flex-col gap-5 text-neutral text-center mb-10'>
-          <h1 className='font-syne font-bold text-4xl uppercase'>
+      <section id='about' className='px-6 py-12 scroll-mt-20 md:px-10'>
+        <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8'>
+          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl'>
             Frontend Developer
           </h1>
-          <p>
+          <p className='md:text-lg'>
             Hi there! I&apos;m a Frontend Developer with two years of
             experience, passionate about crafting user-friendly interfaces and
             exploring cutting-edge web technologies. I thrive in remote work
@@ -33,22 +33,22 @@ export default function Home() {
             portfolio to see some of my work, and let&apos;s connect to create
             something amazing!
           </p>
-          <div className='w-9/12 mx-auto'>
+          <div className='w-9/12 mx-auto md:max-w-96'>
             <DownloadResumeBtn outlined />
           </div>
         </div>
 
-        <div className='rounded-2xl overflow-hidden'>
+        <div className='rounded-2xl overflow-hidden w-fit mx-auto'>
           <Image src={aboutMe} alt='About me' placeholder='blur' />
         </div>
       </section>
 
-      <section id='experience' className='px-6 pb-12 scroll-mt-20'>
-        <h2 className='font-syne font-bold text-4xl text-center mb-5'>
+      <section id='experience' className='px-6 pb-12 scroll-mt-20 md:px-10'>
+        <h2 className='font-syne font-bold text-4xl text-center mb-5 md:text-5xl md:mb-8'>
           Experience
         </h2>
 
-        <ul className='flex flex-col gap-5'>
+        <ul className='flex flex-col gap-5 max-w-lg mx-auto'>
           <li>
             <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5'>
               <header>
@@ -149,13 +149,15 @@ export default function Home() {
         className='text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20'
       >
         <div>
-          <h3 className='text-neutral font-semibold text-xl mb-5'>
+          <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl'>
             Want to hire me?
           </h3>
-          <h2 className='font-syne font-bold text-5xl'>Let&apos;s talk!</h2>
+          <h2 className='font-syne font-bold text-5xl md:text-6xl'>
+            Let&apos;s talk!
+          </h2>
         </div>
 
-        <ul className='flex flex-col gap-2.5'>
+        <ul className='flex flex-col gap-2.5 md:text-lg'>
           <li>
             <a
               href='mailto:anagudelogu@gmail.com'
