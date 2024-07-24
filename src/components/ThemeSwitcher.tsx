@@ -1,10 +1,12 @@
 import { useThemeContext } from '@/contexts/ThemeContext';
+import { track } from '@vercel/analytics';
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useThemeContext();
 
   const handleThemeChange = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
+    track('theme-switch');
   };
 
   return (

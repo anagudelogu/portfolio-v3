@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { track } from '@vercel/analytics';
 
 type DownloadResumeBtnProps = {
   outlined?: boolean;
@@ -7,6 +9,9 @@ type DownloadResumeBtnProps = {
 export default function DownloadResumeBtn({
   outlined,
 }: DownloadResumeBtnProps) {
+  const handleDownload = () => {
+    track('download-resume');
+  };
   return (
     <Link
       href={'/Andres_Agudelo.pdf'}
@@ -14,6 +19,7 @@ export default function DownloadResumeBtn({
       rel='noopener noreferrer'
       target='_blank'
       className={`btn btn-primary ${outlined ? 'btn-outline' : ''} w-full`}
+      onClick={handleDownload}
     >
       <svg
         width='18'
