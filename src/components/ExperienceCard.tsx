@@ -19,7 +19,7 @@ export default function ExperienceCard({
   date,
 }: ExperienceCardProps) {
   return (
-    <article className='bg-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px] xl:px-10 xl:py-8'>
+    <article className='bg-neutral-content bg-opacity-30 rounded-2xl shadow-md shadow-[rgba(66,99,248,0.2)] p-6 min-h-[350px] xl:px-10 xl:py-8 text-neutral'>
       <header className='mb-5 xl:mb-7'>
         <Image
           src={logoSrc}

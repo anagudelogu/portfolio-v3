@@ -1,8 +1,20 @@
+import { useThemeContext } from '@/contexts/ThemeContext';
+
 export default function ThemeSwitcher() {
+  const { theme, setTheme } = useThemeContext();
+
+  const handleThemeChange = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <label className='swap swap-rotate active:!bg-transparent'>
+    <label className='swap swap-rotate active:!bg-transparent text-neutral'>
       {/* this hidden checkbox controls the state */}
-      <input type='checkbox' />
+      <input
+        type='checkbox'
+        checked={theme === 'dark'}
+        onChange={handleThemeChange}
+      />
 
       {/* sun icon */}
       <svg

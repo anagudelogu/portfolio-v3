@@ -1,5 +1,4 @@
 import DownloadResumeBtn from '@/components/DownloadResumeBtn';
-import { Metadata } from 'next';
 import aboutMe from '../../public/about-me.png';
 import Image from 'next/image';
 import soleniumPreview from '../../public/solenium-landing.png';
@@ -8,12 +7,7 @@ import hoololiLogo from '../../public/hoololi-logo.png';
 import microverseLogo from '../../public/microverse-logo.png';
 import soleniumLogo from '../../public/solenium-logo.svg';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-  title: 'Andres Agudelo | Frontend Developer',
-  description:
-    'Frontend Developer with two years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.',
-};
+import { useThemeContext } from '@/contexts/ThemeContext';
 
 export default function Home() {
   return (
@@ -55,13 +49,13 @@ export default function Home() {
         id='experience'
         className='px-6 pb-12 scroll-mt-20 md:px-10 xl:px-20 xl:pb-20'
       >
-        <h2 className='font-syne font-bold text-4xl text-center mb-5 md:text-5xl md:mb-8 xl:text-6xl'>
+        <h2 className='font-syne font-bold text-4xl text-center text-neutral mb-5 md:text-5xl md:mb-8 xl:text-6xl'>
           Experience
         </h2>
 
         <ul className='flex flex-col gap-5 max-w-lg mx-auto lg:grid lg:grid-cols-2 lg:max-w-none lg:gap-x-8 lg:gap-y-16'>
           <li className='lg:col-span-2'>
-            <article className='bg-neutral text-white rounded-2xl shadow-sm shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2 xl:px-16 xl:py-12 xl:gap-10'>
+            <article className='bg-neutral text-base-200 rounded-2xl shadow-md shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2 xl:px-16 xl:py-12 xl:gap-10'>
               <div className='flex flex-col gap-5'>
                 <header>
                   <Image
@@ -189,7 +183,7 @@ export default function Home() {
               >
                 <path
                   d='M18.625 6.44458V15.1946C18.625 15.6919 18.4275 16.1688 18.0758 16.5204C17.7242 16.872 17.2473 17.0696 16.75 17.0696H4.25C3.75272 17.0696 3.27581 16.872 2.92417 16.5204C2.57254 16.1688 2.375 15.6919 2.375 15.1946V6.44458M18.625 6.44458C18.625 5.9473 18.4275 5.47039 18.0758 5.11876C17.7242 4.76712 17.2473 4.56958 16.75 4.56958H4.25C3.75272 4.56958 3.27581 4.76712 2.92417 5.11876C2.57254 5.47039 2.375 5.9473 2.375 6.44458M18.625 6.44458V6.64708C18.625 6.9672 18.5431 7.282 18.387 7.56149C18.2309 7.84099 18.0059 8.07586 17.7333 8.24375L11.4833 12.0896C11.1877 12.2717 10.8472 12.3681 10.5 12.3681C10.1528 12.3681 9.81233 12.2717 9.51667 12.0896L3.26667 8.24458C2.9941 8.07669 2.76906 7.84182 2.61297 7.56233C2.45689 7.28283 2.37496 6.96803 2.375 6.64791V6.44458'
-                  stroke='#4263F8'
+                  stroke='currentColor'
                   strokeWidth='1.5'
                   strokeLinecap='round'
                   strokeLinejoin='round'

@@ -10,14 +10,14 @@ export default function Sidebar() {
     setIsOpen(false);
   };
   return (
-    <div className='drawer-side mt-[65px] lg:hidden'>
+    <div className='drawer-side mt-[63px] lg:hidden'>
       <label
         htmlFor='my-drawer'
         aria-label='close sidebar'
         className='drawer-overlay'
         onClick={() => setIsOpen(false)}
       ></label>
-      <ul className='menu menu-lg bg-base-200 text-neutral text-lg font-semibold w-dvw p-4 h-[calc(100dvh-64px)] flex flex-col gap-4 sm:w-96'>
+      <ul className='menu menu-lg bg-base-200 text-neutral text-lg font-semibold w-dvw p-4 h-[calc(100dvh-62px)] flex flex-col gap-4 sm:w-96'>
         <li>
           <Link href='#about' onClick={handleClick}>
             About me

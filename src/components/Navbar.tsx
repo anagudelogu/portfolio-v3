@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className='shadow-sm shadow-[rgba(66,99,248,0.2)] fixed top-0 bg-base-200 w-full'>
+    <header className='shadow-md shadow-[rgba(66,99,248,0.2)] fixed top-0 bg-base-200 w-full'>
       <nav className='navbar px-6 md:px-10 xl:px-20 max-w-7xl mx-auto'>
         <div className='navbar-start'>
           <a className='btn btn-ghost text-primary font-syne font-bold text-3xl px-0'>
@@ -19,7 +19,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className='navbar-center hidden lg:flex lg:grow'>
+        <div className='navbar-center hidden lg:flex lg:grow text-neutral'>
           <ul className='menu menu-horizontal'>
             <li>
               <Link href='#about' onClick={handleClick}>
@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className='navbar-end lg:hidden'>
           <label
             htmlFor='my-drawer'
-            className='btn btn-square btn-ghost'
+            className='btn btn-square btn-ghost text-neutral'
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (

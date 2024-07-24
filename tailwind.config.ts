@@ -19,14 +19,27 @@ const config: Config = {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        light: {
           primary: '#4263f8',
           'primary-content': '#ffffff',
           secondary: '#f6d860',
           accent: '#37cdbe',
           neutral: '#262A2C',
+          'neutral-content': '#ffffff',
           'base-100': '#ffffff',
           'base-200': '#ECECEC',
+        },
+      },
+      {
+        dark: {
+          primary: '#4263f8',
+          'primary-content': '#ffffff',
+          secondary: '#f6d860',
+          accent: '#37cdbe',
+          neutral: '#ECECEC',
+          'neutral-content': '#696969',
+          'base-100': '#ffffff',
+          'base-200': '#262A2C',
         },
       },
     ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]

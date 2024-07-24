@@ -1,6 +1,7 @@
 'use client';
 import { useDrawerContext } from '@/contexts/DrawerContext';
 import Sidebar from './Sidebar';
+import { useThemeContext } from '@/contexts/ThemeContext';
 
 export default function Drawer({
   children,
@@ -8,9 +9,10 @@ export default function Drawer({
   children: React.ReactNode;
 }>) {
   const { isOpen } = useDrawerContext();
+  const { theme } = useThemeContext();
 
   return (
-    <div className='drawer'>
+    <div className='drawer bg-base-200 transition-colors' data-theme={theme}>
       <input
         checked={isOpen}
         id='my-drawer'
