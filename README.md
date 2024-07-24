@@ -7,6 +7,6 @@
 - [x] Scaffold Mobile UI
 - [x] Responsive Desktop UI
 - [x] Dark theme
-- [ ] SEO
+- [x] SEO
+- [x] Analytics
 - [ ] Language Switcher
-- [ ] Analytics
