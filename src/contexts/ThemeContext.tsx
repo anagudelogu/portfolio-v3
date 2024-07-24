@@ -5,6 +5,7 @@ import {
   createContext,
   useContext,
   useState,
+  useEffect,
 } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -24,6 +25,27 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>('light');
+
+  useEffect(() => {
+    const darkThemeMediaQuery = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    );
+    if (darkThemeMediaQuery.matches) {
+      setTheme('dark');
+    }
+
+    darkThemeMediaQuery.addEventListener('change', (e) => {
+      if (e.matches) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    });
+
+    return () => {
+      darkThemeMediaQuery.removeEventListener('change', () => {});
+    };
+  }, []);
 
   return (
     <ThemeContext.Provider

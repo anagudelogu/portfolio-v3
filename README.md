@@ -6,7 +6,7 @@
 - [x] Install DaisyUI
 - [x] Scaffold Mobile UI
 - [x] Responsive Desktop UI
-- [ ] Dark theme
+- [x] Dark theme
 - [ ] SEO
 - [ ] Language Switcher
 - [ ] Analytics
