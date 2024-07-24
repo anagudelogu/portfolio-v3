@@ -6,6 +6,7 @@ import Drawer from '@/components/Drawer';
 import DrawerContextProvider from '@/contexts/DrawerContext';
 import ThemeContextProvider from '@/contexts/ThemeContext';
 import { PHProvider } from './providers';
+import { Analytics } from '@vercel/analytics/react';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
 const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
@@ -84,6 +85,7 @@ export default function RootLayout({
           </DrawerContextProvider>
         </ThemeContextProvider>
       </PHProvider>
+      <Analytics />
     </html>
   );
 }
