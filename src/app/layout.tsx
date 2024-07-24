@@ -7,6 +7,7 @@ import DrawerContextProvider from '@/contexts/DrawerContext';
 import ThemeContextProvider from '@/contexts/ThemeContext';
 import { PHProvider } from './providers';
 import { Analytics } from '@vercel/analytics/react';
+import dynamic from 'next/dynamic';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
 const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
@@ -65,6 +66,10 @@ export const metadata: Metadata = {
   },
 };
 
+const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
+  ssr: false,
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -80,6 +85,7 @@ export default function RootLayout({
                 <Navbar />
 
                 {children}
+                <PostHogPageView />
               </Drawer>
             </body>
           </DrawerContextProvider>
