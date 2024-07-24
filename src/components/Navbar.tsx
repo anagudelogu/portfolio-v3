@@ -22,17 +22,29 @@ export default function Navbar() {
         <div className='navbar-center hidden lg:flex lg:grow text-neutral'>
           <ul className='menu menu-horizontal'>
             <li>
-              <Link href='#about' onClick={handleClick}>
+              <Link
+                href='#about'
+                onClick={handleClick}
+                className='focus:text-neutral'
+              >
                 About me
               </Link>
             </li>
             <li>
-              <Link href='#experience' onClick={handleClick}>
+              <Link
+                href='#experience'
+                onClick={handleClick}
+                className='focus:text-neutral'
+              >
                 Experience
               </Link>
             </li>
             <li>
-              <Link href='#contact' onClick={handleClick}>
+              <Link
+                href='#contact'
+                onClick={handleClick}
+                className='focus:text-neutral'
+              >
                 Contact
               </Link>
             </li>
