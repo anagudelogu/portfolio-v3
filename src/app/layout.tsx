@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Drawer from '@/components/Drawer';
 import DrawerContextProvider from '@/contexts/DrawerContext';
 import ThemeContextProvider from '@/contexts/ThemeContext';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { PHProvider } from './providers';
 
 const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
 const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
@@ -69,22 +69,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaEnabled = !!process.env.NEXT_PUBLIC_GA_ENABLED;
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
   return (
     <html lang='en' className='!scroll-smooth'>
-      <body className={`${rubik.variable} ${syne.variable} font-rubik`}>
+      <PHProvider>
         <ThemeContextProvider>
           <DrawerContextProvider>
-            <Drawer>
-              <Navbar />
+            <body className={`${rubik.variable} ${syne.variable} font-rubik`}>
+              <Drawer>
+                <Navbar />
 
-              {children}
-            </Drawer>
+                {children}
+              </Drawer>
+            </body>
           </DrawerContextProvider>
         </ThemeContextProvider>
-      </body>
-      {gaEnabled && gaId && <GoogleAnalytics gaId={gaId} />}
+      </PHProvider>
     </html>
   );
 }
