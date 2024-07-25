@@ -13,6 +13,21 @@ const config: Config = {
         rubik: ['var(--font-rubik)'],
         syne: ['var(--font-syne)'],
       },
+
+      boxShadow: {
+        orb: '0 0 0 10px var(--fallback-p,oklch(var(--p)/.4))',
+      },
+
+      animation: {
+        orb: 'animate 15s linear infinite',
+      },
+
+      keyframes: {
+        animate: {
+          '0%': { transform: 'translateY(100vh) scale(0)' },
+          '100%': { transform: 'translateY(-10vh) scale(1)' },
+        },
+      },
     },
   },
   plugins: [daisyui],

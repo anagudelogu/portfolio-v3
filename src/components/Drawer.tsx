@@ -2,6 +2,7 @@
 import { useDrawerContext } from '@/contexts/DrawerContext';
 import Sidebar from './Sidebar';
 import { useThemeContext } from '@/contexts/ThemeContext';
+import AnimatedBg from './AnimatedBg';
 
 export default function Drawer({
   children,
@@ -12,7 +13,10 @@ export default function Drawer({
   const { theme } = useThemeContext();
 
   return (
-    <div className='drawer bg-base-200 transition-colors' data-theme={theme}>
+    <div
+      className='drawer bg-base-200 transition-colors z-10'
+      data-theme={theme}
+    >
       <input
         checked={isOpen}
         id='my-drawer'
@@ -23,6 +27,7 @@ export default function Drawer({
       <div className='drawer-content'>{children}</div>
 
       <Sidebar />
+      <AnimatedBg />
     </div>
   );
 }
