@@ -6,13 +6,11 @@ import ExperienceCard from '@/components/ExperienceCard';
 import hoololiLogo from '../../public/hoololi-logo.png';
 import microverseLogo from '../../public/microverse-logo.png';
 import soleniumLogo from '../../public/solenium-logo.svg';
-import Link from 'next/link';
-import { useThemeContext } from '@/contexts/ThemeContext';
 import FooterLinks from '@/components/FooterLinks';
 
 export default function Home() {
   return (
-    <main className='mt-16 max-w-7xl mx-auto'>
+    <main className='mt-16 max-w-7xl mx-auto lg:mt-[68px]'>
       <section
         id='about'
         className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20 xl:px-20'
