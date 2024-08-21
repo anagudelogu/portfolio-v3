@@ -80,8 +80,8 @@ export default function Home() {
                     <p>
                       Revamped the entire landing page by integrating
                       cutting-edge technologies and implementing a fresh design,
-                      resulting in a significant SEO improvement and a 140%
-                      increase in organic traffic within the first month.
+                      resulting in a significant SEO improvement and a 331,6%
+                      increase in organic traffic within the first quarter.
                     </p>
                   </li>
 
@@ -96,9 +96,9 @@ export default function Home() {
 
                   <li>
                     <p>
-                      Worked closely with product and design team, to understand
-                      the business requirements and prioritize and scope work
-                      accordingly, for me and my peers.
+                      Worked closely with the product and design team, to
+                      understand the business requirements and prioritize and
+                      scope work accordingly, for me and my peers.
                     </p>
                   </li>
                 </ul>
