@@ -20,7 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body
+        className={cn(
+          'before:bg-pattern after:bg-gradient-decorations min-h-screen bg-[#141521] font-sans antialiased',
+          fontSans.variable
+        )}
+      >
         {children}
       </body>
     </html>
