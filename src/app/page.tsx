@@ -1,174 +1,113 @@
-import DownloadResumeBtn from '@/components/DownloadResumeBtn';
-import aboutMe from '../../public/about-me.png';
-import Image from 'next/image';
-import soleniumPreview from '../../public/solenium-landing.png';
-import ExperienceCard from '@/components/ExperienceCard';
-import hoololiLogo from '../../public/hoololi-logo.png';
-import microverseLogo from '../../public/microverse-logo.png';
-import soleniumLogo from '../../public/solenium-logo.svg';
-import FooterLinks from '@/components/FooterLinks';
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className='mt-16 max-w-7xl mx-auto lg:mt-[68px]'>
-      <section
-        id='about'
-        className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20 xl:px-20'
-      >
-        <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8 lg:text-left'>
-          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl lg:text-4xl xl:text-6xl'>
-            Frontend Developer
-          </h1>
-          <p className='md:text-lg lg:text-base xl:text-lg'>
-            Hi there! I&apos;m a Frontend Developer with two years of
-            experience, passionate about crafting user-friendly interfaces and
-            exploring cutting-edge web technologies. I thrive in remote work
-            environments and love collaborating with cross-cultural teams to
-            bring unique perspectives to our projects. I&apos;m dedicated to
-            building awesome products that make a difference. Take a look at my
-            portfolio to see some of my work, and let&apos;s connect to create
-            something amazing!
-          </p>
-          <div className='w-9/12 mx-auto md:max-w-96 lg:mx-0'>
-            <DownloadResumeBtn outlined />
-          </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+          Get started by editing&nbsp;
+          <code className="font-mono font-bold">src/app/page.tsx</code>
+        </p>
+        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+          <a
+            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            By{" "}
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
+          </a>
         </div>
+      </div>
 
-        <div className='rounded-2xl overflow-hidden w-fit h-fit mx-auto lg:self-center lg:mr-0'>
-          <Image
-            src={aboutMe}
-            alt='About me'
-            placeholder='blur'
-            className='lg:h-auto lg:w-96'
-          />
-        </div>
-      </section>
+      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        <Image
+          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+          src="/next.svg"
+          alt="Next.js Logo"
+          width={180}
+          height={37}
+          priority
+        />
+      </div>
 
-      <section
-        id='experience'
-        className='px-6 pb-12 scroll-mt-20 md:px-10 xl:px-20 xl:pb-20'
-      >
-        <h2 className='font-syne font-bold text-4xl text-center text-neutral mb-5 md:text-5xl md:mb-8 xl:text-6xl'>
-          Experience
-        </h2>
-
-        <ul className='flex flex-col gap-5 max-w-lg mx-auto lg:grid lg:grid-cols-2 lg:max-w-none lg:gap-x-8 lg:gap-y-16'>
-          <li className='lg:col-span-2'>
-            <article className='bg-neutral text-base-200 rounded-2xl shadow-md shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2 xl:px-16 xl:py-12 xl:gap-10'>
-              <div className='flex flex-col gap-5'>
-                <header>
-                  <Image
-                    src={soleniumLogo}
-                    alt='Solenium logo'
-                    className='mb-3'
-                    height={24}
-                  />
-                  <h4 className='text-sm flex justify-between items-center xl:text-base'>
-                    Frontend Developer
-                    <span className='text-xs xl:text-sm'>
-                      Oct, 2023 - Jun, 2024
-                    </span>
-                  </h4>
-                  <h3 className='font-bold text-4xl xl:text-5xl'>Solenium</h3>
-                  <h5 className='text-xs xl:text-sm'>
-                    Vue, TypeScript, Nuxt, TailwindCSS
-                  </h5>
-                </header>
-
-                <ul className='text-sm flex flex-col gap-3 xl:text-base'>
-                  <li>
-                    <p>
-                      Revamped the entire landing page by integrating
-                      cutting-edge technologies and implementing a fresh design,
-                      resulting in a significant SEO improvement and a 331,6%
-                      increase in organic traffic within the first quarter.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      Started the development of an app for monitoring energy
-                      border meters, enhancing operational efficiency by
-                      streamlining data collection and analysis processes,
-                      projected to reduce manual monitoring time by 90%.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      Worked closely with the product and design team, to
-                      understand the business requirements and prioritize and
-                      scope work accordingly, for me and my peers.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-              <div className='rounded-2xl overflow-hidden w-fit h-fit lg:self-center'>
-                <Image
-                  src={soleniumPreview}
-                  alt='Solenium landing page'
-                  className='object-cover'
-                />
-              </div>
-            </article>
-          </li>
-          <li>
-            <ExperienceCard
-              logoSrc={hoololiLogo}
-              role='Frontend Developer'
-              company='Hoololi'
-              techStack='React, TypeScript, TailwindCSS, Firebase'
-              date='Oct, 2022 - Dec, 2023'
-            >
-              <li>
-                Led the development of a new project from the ground up, closely
-                following the product requirements to deliver a high-quality
-                product using React, Typescript, and Tailwind.
-              </li>
-              <li>
-                Focused on continuously delivering features following best
-                practices, code testing, and documentation.
-              </li>
-            </ExperienceCard>
-          </li>
-
-          <li>
-            <ExperienceCard
-              logoSrc={microverseLogo}
-              role='PT Code Reviewer'
-              company='Microverse'
-              techStack='React, Ruby on Rails, TypeScript, GitHub'
-              date='Oct, 2022 - Oct, 2023'
-            >
-              <li>
-                Mentored junior web developers, providing technical support
-                through code reviews.
-              </li>
-              <li>
-                Proposed improvements to code organization to improve code
-                quality and encourage professional standards and best practices.
-              </li>
-            </ExperienceCard>
-          </li>
-        </ul>
-      </section>
-
-      <footer
-        id='contact'
-        className='px-6 text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20 md:px-10 lg:text-left lg:gap-12 lg:pb-20 xl:px-20 xl:gap-20'
-      >
-        <div>
-          <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl lg:text-3xl'>
-            Want to hire me?
-          </h3>
-          <h2 className='font-syne font-bold text-5xl md:text-6xl lg:text-8xl'>
-            Let&apos;s talk!
+      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+        <a
+          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Docs{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
           </h2>
-        </div>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Find in-depth information about Next.js features and API.
+          </p>
+        </a>
 
-        <FooterLinks />
-      </footer>
+        <a
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Learn{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          </p>
+        </a>
+
+        <a
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Templates{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Explore starter templates for Next.js.
+          </p>
+        </a>
+
+        <a
+          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Deploy{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              -&gt;
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
+            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          </p>
+        </a>
+      </div>
     </main>
   );
 }
