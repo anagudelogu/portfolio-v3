@@ -1,13 +1,32 @@
+import { MENU_LINKS } from '@/lib/constants'
+import Logo from './logo'
 import MobileMenu from './mobile-menu'
+import Link from 'next/link'
+import Image from 'next/image'
+import memojiImg from '@/assets/images/memoji.webp'
 
 export default function NavigationBar() {
   return (
-    <div>
-      <nav className="container flex items-center justify-between py-4">
-        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text font-serif text-2xl font-bold text-transparent">
-          Andres Agudelo
-        </div>
+    <div className="fixed top-0 flex w-full items-center justify-center bg-background/10 shadow-sm backdrop-blur">
+      <nav className="container flex w-full items-center justify-between py-4">
+        <Logo />
         <MobileMenu />
+        <ul className="hidden gap-6 md:flex">
+          {MENU_LINKS.map((item) => (
+            <li key={item.title}>
+              <Link
+                href={item.path}
+                prefetch={true}
+                className="font-serif underline-offset-4 transition-all hover:text-foreground/60 hover:underline"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="hidden transition-transform hover:rotate-12 md:block">
+          <Image src={memojiImg} alt="Memoji" width={40} height={40} />
+        </div>
       </nav>
     </div>
   )
