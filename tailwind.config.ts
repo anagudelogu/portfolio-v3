@@ -11,6 +11,11 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1200px'
+    },
     container: {
       center: true,
       padding: {
@@ -18,7 +23,7 @@ const config = {
         md: '2rem'
       },
       screens: {
-        '2xl': '1280px'
+        '2xl': '1200px'
       }
     },
     extend: {
@@ -74,11 +79,18 @@ const config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'ping-large': {
+          '75%, 100%': {
+            transform: 'scale(3)',
+            opacity: '0'
+          }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'ping-large': 'ping-large 1s cubic-bezier(0, 0, 0.2, 1) infinite'
       }
     }
   },
