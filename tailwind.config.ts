@@ -85,12 +85,16 @@ const config = {
             transform: 'scale(3)',
             opacity: '0'
           }
+        },
+        'auto-rotate': {
+          to: { '--angle': '360deg' }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'ping-large': 'ping-large 1s cubic-bezier(0, 0, 0.2, 1) infinite'
+        'ping-large': 'ping-large 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'auto-rotate': 'auto-rotate 2s linear infinite'
       }
     }
   },

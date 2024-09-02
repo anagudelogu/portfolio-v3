@@ -7,7 +7,7 @@ import memojiImg from '@/assets/images/memoji.webp'
 
 export default function NavigationBar() {
   return (
-    <div className="fixed top-0 flex w-full items-center justify-center bg-background/10 shadow-sm backdrop-blur">
+    <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/10 shadow-sm backdrop-blur">
       <nav className="container flex w-full items-center justify-between py-4">
         <Logo />
         <MobileMenu />

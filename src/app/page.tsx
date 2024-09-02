@@ -1,4 +1,5 @@
 import memojiImg from '@/assets/images/memoji-pc.webp'
+import FeaturedExperience from '@/components/featured-experience'
 import { Button } from '@/components/ui/button'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
@@ -6,12 +7,12 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main>
-      <div className="container py-32 md:py-48 lg:py-60">
+      <section className="container py-32 md:py-48 lg:py-60">
         <div className="flex flex-col items-center">
           <Image src={memojiImg} alt="Memoji" width={100} height={100} />
           <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
             <div className="relative size-2.5 rounded-full bg-green-500">
-              <div className="animate-ping-large absolute inset-0 rounded-full bg-green-500"></div>
+              <div className="absolute inset-0 animate-ping-large rounded-full bg-green-500"></div>
             </div>
             <div className="text-sm font-medium">Available for new projects</div>
           </div>
@@ -35,7 +36,21 @@ export default function Home() {
             <span>👋</span>
           </Button>
         </div>
-      </div>
+      </section>
+
+      <section className="container mb-32">
+        <div className="flex justify-center">
+          <h3 className="gradient-text font-serif text-sm font-bold uppercase">
+            Real-world Impact
+          </h3>
+        </div>
+        <h2 className="mb-10 mt-6 text-center text-3xl font-extrabold tracking-wide md:text-5xl">
+          Experience
+        </h2>
+        <div>
+          <FeaturedExperience />
+        </div>
+      </section>
     </main>
   )
 }
