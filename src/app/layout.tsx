@@ -1,97 +1,46 @@
-import type { Metadata } from 'next';
-import { Rubik, Syne } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Drawer from '@/components/Drawer';
-import DrawerContextProvider from '@/contexts/DrawerContext';
-import ThemeContextProvider from '@/contexts/ThemeContext';
-import { PHProvider } from './providers';
-import { Analytics } from '@vercel/analytics/react';
-import dynamic from 'next/dynamic';
+import type { Metadata } from 'next'
+import { Inter as FontSans } from 'next/font/google'
+import { Syne as FontSerif } from 'next/font/google'
+import './globals.css'
+import { cn } from '@/lib/utils'
+import { ThemeProvider } from '@/components/theme-provider'
+import NavigationBar from '@/components/navigation-bar'
 
-const rubik = Rubik({ subsets: ['latin'], variable: '--font-rubik' });
-const syne = Syne({ subsets: ['latin'], variable: '--font-syne' });
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans'
+})
+
+const fontSerif = FontSerif({
+  subsets: ['latin'],
+  variable: '--font-serif'
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://andresagudelo.dev'),
   title: 'Andres Agudelo | Frontend Developer',
   description:
-    'Frontend Developer with years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.',
-  keywords: [
-    'Frontend Developer',
-    'React',
-    'Next.js',
-    'Tailwind CSS',
-    'TypeScript',
-  ],
-  openGraph: {
-    siteName: 'Andres Agudelo | Frontend Developer',
-    type: 'website',
-    locale: 'en_US',
-    description:
-      'Frontend Developer with years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.',
-    images: [
-      {
-        url: 'https://andresagudelo.dev/about-me.png',
-        width: 1200,
-        height: 630,
-        alt: 'Andres Agudelo | Frontend Developer',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Andres Agudelo | Frontend Developer',
-    description:
-      'Frontend Developer with years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.',
-    images: [
-      {
-        url: 'https://andresagudelo.dev/about-me.png',
-        width: 1200,
-        height: 630,
-        alt: 'Andres Agudelo | Frontend Developer',
-      },
-    ],
-  },
-  alternates: {
-    canonical: 'https://andresagudelo.dev',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    'max-image-preview': 'large',
-    'max-snippet': -1,
-    'max-video-preview': -1,
-    googleBot: 'index, follow',
-  },
-};
-
-const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
-  ssr: false,
-});
+    'Frontend Developer with years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.'
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang='en' className='!scroll-smooth'>
-      <PHProvider>
-        <ThemeContextProvider>
-          <DrawerContextProvider>
-            <body className={`${rubik.variable} ${syne.variable} font-rubik`}>
-              <Drawer>
-                <Navbar />
-
-                {children}
-                <PostHogPageView />
-              </Drawer>
-            </body>
-          </DrawerContextProvider>
-        </ThemeContextProvider>
-      </PHProvider>
-      <Analytics />
+    <html lang="en" suppressHydrationWarning className="!scroll-smooth">
+      <body
+        className={cn(
+          'before:bg-pattern after:bg-gradient-decorations min-h-screen font-sans antialiased',
+          fontSans.variable,
+          fontSerif.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <NavigationBar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  );
+  )
 }

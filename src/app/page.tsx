@@ -1,174 +1,209 @@
-import DownloadResumeBtn from '@/components/DownloadResumeBtn';
-import aboutMe from '../../public/about-me.png';
-import Image from 'next/image';
-import soleniumPreview from '../../public/solenium-landing.png';
-import ExperienceCard from '@/components/ExperienceCard';
-import hoololiLogo from '../../public/hoololi-logo.png';
-import microverseLogo from '../../public/microverse-logo.png';
-import soleniumLogo from '../../public/solenium-logo.svg';
-import FooterLinks from '@/components/FooterLinks';
+import memojiImg from '@/assets/images/memoji-pc.webp'
+import ExperienceCard from '@/components/experience.card'
+import FeaturedExperience from '@/components/featured-experience'
+import TechStackSlider from '@/components/tech-stack-slider'
+import { Button } from '@/components/ui/button'
+import { ArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
+import personalPic from '@/assets/images/personal-pic.png'
+import amsterdamPic from '@/assets/images/amsterdam.jpeg'
+import ghentPic from '@/assets/images/ghent.png'
+import ibizaPic from '@/assets/images/ibiza.png'
+import map from '@/assets/images/map.jpeg'
+import memojiThumb from '@/assets/images/memoji-thumbsup.webp'
 
 export default function Home() {
   return (
-    <main className='mt-16 max-w-7xl mx-auto lg:mt-[68px]'>
-      <section
-        id='about'
-        className='px-6 py-12 scroll-mt-20 md:px-10 lg:grid lg:grid-cols-2 lg:py-20 xl:px-20'
-      >
-        <div className='flex flex-col gap-5 text-neutral text-center mb-10 md:gap-8 lg:text-left'>
-          <h1 className='font-syne font-bold text-4xl uppercase md:text-5xl lg:text-4xl xl:text-6xl'>
-            Frontend Developer
-          </h1>
-          <p className='md:text-lg lg:text-base xl:text-lg'>
-            Hi there! I&apos;m a Frontend Developer with two years of
-            experience, passionate about crafting user-friendly interfaces and
-            exploring cutting-edge web technologies. I thrive in remote work
-            environments and love collaborating with cross-cultural teams to
-            bring unique perspectives to our projects. I&apos;m dedicated to
-            building awesome products that make a difference. Take a look at my
-            portfolio to see some of my work, and let&apos;s connect to create
-            something amazing!
-          </p>
-          <div className='w-9/12 mx-auto md:max-w-96 lg:mx-0'>
-            <DownloadResumeBtn outlined />
+    <main>
+      <section id="hero" className="container scroll-mt-20 py-32 md:py-48 lg:min-h-screen lg:py-60">
+        <div className="flex flex-col items-center">
+          <Image src={memojiImg} alt="Memoji" width={100} height={100} />
+          <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
+            <div className="relative size-2.5 rounded-full bg-green-500">
+              <div className="absolute inset-0 animate-ping-large rounded-full bg-green-500"></div>
+            </div>
+            <div className="text-sm font-medium">Available for new projects</div>
           </div>
         </div>
-
-        <div className='rounded-2xl overflow-hidden w-fit h-fit mx-auto lg:self-center lg:mr-0'>
-          <Image
-            src={aboutMe}
-            alt='About me'
-            placeholder='blur'
-            className='lg:h-auto lg:w-96'
-          />
+        <div className="mx-auto max-w-lg">
+          <h1 className="mt-8 text-center text-3xl font-black tracking-wide md:text-5xl">
+            Crafting Engaging User Experiences
+          </h1>
+          <p className="mt-4 text-center text-foreground/70 md:text-lg">
+            I specialize in turning concepts into high-quality, responsive applications. Ready to
+            take your project to the next level?
+          </p>
+        </div>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+          <Button variant="outline" className="inline-flex items-center gap-2 font-semibold">
+            <span>Explore My Work</span>
+            <ArrowDownIcon className="size-4" />
+          </Button>
+          <Button className="inline-flex items-center gap-2 font-semibold">
+            <span>Let&apos;s Connect</span>
+            <span>👋</span>
+          </Button>
         </div>
       </section>
 
-      <section
-        id='experience'
-        className='px-6 pb-12 scroll-mt-20 md:px-10 xl:px-20 xl:pb-20'
-      >
-        <h2 className='font-syne font-bold text-4xl text-center text-neutral mb-5 md:text-5xl md:mb-8 xl:text-6xl'>
+      <section id="experience" className="container scroll-mt-20">
+        <div className="flex justify-center">
+          <h3 className="gradient-text font-serif text-sm font-bold uppercase">
+            Real-world Impact
+          </h3>
+        </div>
+        <h2 className="mb-10 mt-6 text-center text-3xl font-extrabold tracking-wide md:text-5xl">
           Experience
         </h2>
+        <div className="mx-auto grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-8 lg:max-w-5xl lg:grid-cols-2 lg:gap-y-10">
+          <FeaturedExperience />
+          <ExperienceCard
+            company="Hoololi"
+            date="October, 2022 - December, 2023"
+            role="Frontend Developer"
+            techStack={['React', 'TypeScript', 'TailwindCSS', 'Firebase']}
+          >
+            <ul className="mb-8 flex list-inside list-disc flex-col gap-4">
+              <li>
+                <p className="inline">
+                  Spearheaded the end-to-end development of a data management web app, independently
+                  selecting the tech stack (React, TypeScript, Tailwind CSS) and managing trade-offs
+                  to meet project goals.
+                </p>
+              </li>
+              <li>
+                <p className="inline">
+                  Delivered a user-friendly interface that supported the data input and
+                  visualization needs of plantation managers, resulting in the successful onboarding
+                  of the first real user.
+                </p>
+              </li>
+            </ul>
+          </ExperienceCard>
+          <ExperienceCard
+            company="Microverse"
+            date="October, 2022 - October, 2023"
+            role="Code Reviewer"
+            techStack={['React', 'Ruby on Rails', 'TypeScript', 'GitHub']}
+          >
+            <ul className="mb-8 flex list-inside list-disc flex-col gap-4">
+              <li>
+                <p className="inline">
+                  Conducted over 120 code reviews and PR contributions, significantly improving code
+                  quality and fostering best practices among a global, cross-cultural team of junior
+                  developers in a fully remote environment.
+                </p>
+              </li>
+              <li>
+                <p className="inline">
+                  Mentored junior developers from diverse backgrounds, helping them overcome
+                  technical challenges and improving their coding proficiency, which led to a 30%
+                  reduction in common errors in their submitted projects.
+                </p>
+              </li>
+            </ul>
+          </ExperienceCard>
+        </div>
+      </section>
 
-        <ul className='flex flex-col gap-5 max-w-lg mx-auto lg:grid lg:grid-cols-2 lg:max-w-none lg:gap-x-8 lg:gap-y-16'>
-          <li className='lg:col-span-2'>
-            <article className='bg-neutral text-base-200 rounded-2xl shadow-md shadow-[rgba(66,99,248,0.2)] px-5 py-8 flex flex-col gap-5 lg:grid lg:grid-cols-2 xl:px-16 xl:py-12 xl:gap-10'>
-              <div className='flex flex-col gap-5'>
-                <header>
-                  <Image
-                    src={soleniumLogo}
-                    alt='Solenium logo'
-                    className='mb-3'
-                    height={24}
-                  />
-                  <h4 className='text-sm flex justify-between items-center xl:text-base'>
-                    Frontend Developer
-                    <span className='text-xs xl:text-sm'>
-                      Oct, 2023 - Jun, 2024
-                    </span>
-                  </h4>
-                  <h3 className='font-bold text-4xl xl:text-5xl'>Solenium</h3>
-                  <h5 className='text-xs xl:text-sm'>
-                    Vue, TypeScript, Nuxt, TailwindCSS
-                  </h5>
-                </header>
+      <div className="mx-auto max-w-6xl overflow-x-clip py-16 md:py-32">
+        <TechStackSlider />
+      </div>
 
-                <ul className='text-sm flex flex-col gap-3 xl:text-base'>
-                  <li>
-                    <p>
-                      Revamped the entire landing page by integrating
-                      cutting-edge technologies and implementing a fresh design,
-                      resulting in a significant SEO improvement and a 331,6%
-                      increase in organic traffic within the first quarter.
-                    </p>
-                  </li>
+      <section id="about" className="container scroll-mt-20 pb-16 md:pb-32">
+        <div className="flex justify-center">
+          <h3 className="gradient-text font-serif text-sm font-bold uppercase">Beyond the code</h3>
+        </div>
+        <h2 className="mb-10 mt-6 text-center text-3xl font-extrabold tracking-wide md:text-5xl">
+          About me
+        </h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <article className="relative mx-auto max-h-[350px] w-full rounded-2xl bg-gray-400/15">
+            <Image src={personalPic} alt="Andres Agudelo" className="h-full w-full object-cover" />
+          </article>
 
-                  <li>
-                    <p>
-                      Started the development of an app for monitoring energy
-                      border meters, enhancing operational efficiency by
-                      streamlining data collection and analysis processes,
-                      projected to reduce manual monitoring time by 90%.
-                    </p>
-                  </li>
+          <article className="mx-auto flex max-h-[350px] w-full items-center rounded-2xl bg-gray-400/15 p-6 md:col-span-2 lg:text-lg">
+            <p>
+              When I&apos;m not immersed in the screen, you&apos;ll often find me planning my next
+              adventure and enjoying the excitement of exploring new places. Traveling is my way of
+              seeing the world and collecting cool stories along the way.
+            </p>
+          </article>
 
-                  <li>
-                    <p>
-                      Worked closely with the product and design team, to
-                      understand the business requirements and prioritize and
-                      scope work accordingly, for me and my peers.
-                    </p>
-                  </li>
-                </ul>
-              </div>
+          <article className="mx-auto flex max-h-[350px] w-full items-center rounded-2xl bg-gray-400/15 p-6 md:col-span-2 lg:text-lg">
+            <p>
+              I also love to hit the gym or box, I&apos;m constantly challenging myself and seeing
+              what I can do. When it&apos;s time to chill, I&apos;m all about hanging out with
+              friends, gaming or just vibing to music, These are the things that keep me going.
+            </p>
+          </article>
 
-              <div className='rounded-2xl overflow-hidden w-fit h-fit lg:self-center'>
-                <Image
-                  src={soleniumPreview}
-                  alt='Solenium landing page'
-                  className='object-cover'
-                />
-              </div>
-            </article>
+          <article className="relative mx-auto max-h-[350px] w-full overflow-clip rounded-2xl bg-gray-400/15 md:col-span-1 lg:col-span-1">
+            <Image
+              src={map}
+              alt="Andres Agudelo"
+              className="h-full w-full object-cover object-right-top"
+            />
+            <div className="absolute left-1/2 top-1/2 size-20 -translate-x-1/2 -translate-y-1/2 rounded-full after:absolute after:inset-0 after:rounded-full after:outline after:outline-2 after:outline-offset-2 after:outline-gray-950/30 after:content-['']">
+              <div className="absolute inset-0 z-[-2] animate-ping rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 [animation-duration:2s]"></div>
+              <div className="absolute inset-0 z-[-1] rounded-full bg-gradient-to-r from-emerald-300 to-sky-400"></div>
+              <Image src={memojiThumb} alt="Andres Agudelo" className="size-20" />
+            </div>
+          </article>
+
+          <article className="relative mx-auto hidden w-full overflow-clip rounded-2xl bg-gray-400/15 lg:block">
+            <Image
+              src={amsterdamPic}
+              alt="Andres Agudelo"
+              className="h-full w-full object-cover transition duration-300 hover:scale-125"
+            />
+          </article>
+
+          <article className="relative mx-auto hidden w-full overflow-clip rounded-2xl bg-gray-400/15 lg:block">
+            <Image
+              src={ibizaPic}
+              alt="Andres Agudelo"
+              className="h-full w-full object-cover transition duration-300 hover:scale-125"
+            />
+          </article>
+
+          <article className="relative mx-auto hidden w-full overflow-clip rounded-2xl bg-gray-400/15 lg:block">
+            <Image
+              src={ghentPic}
+              alt="Andres Agudelo"
+              className="h-full w-full object-cover transition duration-300 hover:scale-125"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" className="container scroll-mt-20 pb-16 md:pb-32">
+        <div className="flex justify-center">
+          <h3 className="gradient-text font-serif text-sm font-bold uppercase">
+            Interested in collaborating?
+          </h3>
+        </div>
+        <h2 className="mb-10 mt-6 text-center font-serif text-5xl font-bold md:text-6xl lg:text-8xl">
+          Let&apos;s Talk!
+        </h2>
+
+        <ul className="flex flex-col items-center md:flex-row md:justify-around">
+          <li className="flex items-center gap-4">
+            <EnvelopeIcon className="size-5" />
+            <h3 className="text-lg font-medium">Email</h3>
           </li>
           <li>
-            <ExperienceCard
-              logoSrc={hoololiLogo}
-              role='Frontend Developer'
-              company='Hoololi'
-              techStack='React, TypeScript, TailwindCSS, Firebase'
-              date='Oct, 2022 - Dec, 2023'
-            >
-              <li>
-                Led the development of a new project from the ground up, closely
-                following the product requirements to deliver a high-quality
-                product using React, Typescript, and Tailwind.
-              </li>
-              <li>
-                Focused on continuously delivering features following best
-                practices, code testing, and documentation.
-              </li>
-            </ExperienceCard>
+            <h3 className="text-lg font-medium">LinkedIn</h3>
           </li>
-
           <li>
-            <ExperienceCard
-              logoSrc={microverseLogo}
-              role='PT Code Reviewer'
-              company='Microverse'
-              techStack='React, Ruby on Rails, TypeScript, GitHub'
-              date='Oct, 2022 - Oct, 2023'
-            >
-              <li>
-                Mentored junior web developers, providing technical support
-                through code reviews.
-              </li>
-              <li>
-                Proposed improvements to code organization to improve code
-                quality and encourage professional standards and best practices.
-              </li>
-            </ExperienceCard>
+            <h3 className="text-lg font-medium">GitHub</h3>
           </li>
         </ul>
       </section>
 
-      <footer
-        id='contact'
-        className='px-6 text-center flex flex-col justify-center text-primary gap-5 pb-12 scroll-mt-20 md:px-10 lg:text-left lg:gap-12 lg:pb-20 xl:px-20 xl:gap-20'
-      >
-        <div>
-          <h3 className='text-neutral font-semibold text-xl mb-5 md:text-2xl lg:text-3xl'>
-            Want to hire me?
-          </h3>
-          <h2 className='font-syne font-bold text-5xl md:text-6xl lg:text-8xl'>
-            Let&apos;s talk!
-          </h2>
-        </div>
-
-        <FooterLinks />
+      <footer className="mb-6 flex justify-center">
+        <small className="text-foreground/40">Created by Andres Agudelo 2024.</small>
       </footer>
     </main>
-  );
+  )
 }
