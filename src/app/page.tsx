@@ -3,7 +3,7 @@ import ExperienceCard from '@/components/experience.card'
 import FeaturedExperience from '@/components/featured-experience'
 import TechStackSlider from '@/components/tech-stack-slider'
 import { Button } from '@/components/ui/button'
-import { ArrowDownIcon } from '@heroicons/react/24/outline'
+import { ArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import personalPic from '@/assets/images/personal-pic.png'
 import amsterdamPic from '@/assets/images/amsterdam.jpeg'
@@ -110,7 +110,7 @@ export default function Home() {
         <TechStackSlider />
       </div>
 
-      <section className="container mb-32">
+      <section className="container pb-16 md:pb-32">
         <div className="flex justify-center">
           <h3 className="gradient-text font-serif text-sm font-bold uppercase">Beyond the code</h3>
         </div>
@@ -176,6 +176,34 @@ export default function Home() {
           </article>
         </div>
       </section>
+
+      <section className="container pb-16 md:pb-32">
+        <div className="flex justify-center">
+          <h3 className="gradient-text font-serif text-sm font-bold uppercase">
+            Interested in collaborating?
+          </h3>
+        </div>
+        <h2 className="mb-10 mt-6 text-center font-serif text-5xl font-bold md:text-6xl lg:text-8xl">
+          Let&apos;s Talk!
+        </h2>
+
+        <ul className="flex flex-col items-center md:flex-row md:justify-around">
+          <li className="flex items-center gap-4">
+            <EnvelopeIcon className="size-5" />
+            <h3 className="text-lg font-medium">Email</h3>
+          </li>
+          <li>
+            <h3 className="text-lg font-medium">LinkedIn</h3>
+          </li>
+          <li>
+            <h3 className="text-lg font-medium">GitHub</h3>
+          </li>
+        </ul>
+      </section>
+
+      <footer className="mb-6 flex justify-center">
+        <small className="text-foreground/40">Created by Andres Agudelo 2024.</small>
+      </footer>
     </main>
   )
 }
