@@ -16,6 +16,7 @@ export default function NavigationBar() {
         <Suspense fallback={null}>
           <MobileMenu />
         </Suspense>
+
         <ul className="hidden gap-6 md:flex">
           {MENU_LINKS.map((item) => (
             <li key={item.title}>
