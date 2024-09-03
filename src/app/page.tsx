@@ -1,6 +1,7 @@
 import memojiImg from '@/assets/images/memoji-pc.webp'
 import ExperienceCard from '@/components/experience.card'
 import FeaturedExperience from '@/components/featured-experience'
+import TechStackSlider from '@/components/tech-stack-slider'
 import { Button } from '@/components/ui/button'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
@@ -8,7 +9,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main>
-      <section className="container min-h-screen py-32 md:py-48 lg:py-60">
+      <section className="container py-32 md:py-48 lg:min-h-screen lg:py-60">
         <div className="flex flex-col items-center">
           <Image src={memojiImg} alt="Memoji" width={100} height={100} />
           <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
@@ -39,7 +40,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mb-32">
+      <section className="container">
         <div className="flex justify-center">
           <h3 className="gradient-text font-serif text-sm font-bold uppercase">
             Real-world Impact
@@ -98,6 +99,10 @@ export default function Home() {
           </ExperienceCard>
         </div>
       </section>
+
+      <div className="mx-auto mb-32 max-w-6xl overflow-x-clip py-16 md:py-32">
+        <TechStackSlider />
+      </div>
     </main>
   )
 }
