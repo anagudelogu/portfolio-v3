@@ -4,7 +4,7 @@ import soleniumImg from '@/assets/images/solenium-landing.png'
 
 export default function FeaturedExperience() {
   return (
-    <article className="animated-border relative mx-auto max-w-lg rounded-lg border bg-background p-4 lg:grid lg:max-w-5xl lg:grid-cols-2 lg:gap-4 lg:px-8">
+    <article className="animated-border relative mx-auto max-w-lg rounded-lg border bg-background p-4 lg:col-span-2 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-4 lg:px-8">
       <div>
         <header className="mb-8">
           <h4 className="font-serif text-lg font-bold">Solenium</h4>

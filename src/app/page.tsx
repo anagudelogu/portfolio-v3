@@ -1,4 +1,5 @@
 import memojiImg from '@/assets/images/memoji-pc.webp'
+import ExperienceCard from '@/components/experience.card'
 import FeaturedExperience from '@/components/featured-experience'
 import { Button } from '@/components/ui/button'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
@@ -7,7 +8,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main>
-      <section className="container py-32 md:py-48 lg:py-60">
+      <section className="container min-h-screen py-32 md:py-48 lg:py-60">
         <div className="flex flex-col items-center">
           <Image src={memojiImg} alt="Memoji" width={100} height={100} />
           <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
@@ -47,8 +48,54 @@ export default function Home() {
         <h2 className="mb-10 mt-6 text-center text-3xl font-extrabold tracking-wide md:text-5xl">
           Experience
         </h2>
-        <div>
+        <div className="mx-auto grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-8 lg:max-w-5xl lg:grid-cols-2 lg:gap-y-10">
           <FeaturedExperience />
+          <ExperienceCard
+            company="Hoololi"
+            date="October, 2022 - December, 2023"
+            role="Frontend Developer"
+            techStack={['React', 'TypeScript', 'TailwindCSS', 'Firebase']}
+          >
+            <ul className="mb-8 flex list-inside list-disc flex-col gap-4">
+              <li>
+                <p className="inline">
+                  Spearheaded the end-to-end development of a data management web app, independently
+                  selecting the tech stack (React, TypeScript, Tailwind CSS) and managing trade-offs
+                  to meet project goals.
+                </p>
+              </li>
+              <li>
+                <p className="inline">
+                  Delivered a user-friendly interface that supported the data input and
+                  visualization needs of plantation managers, resulting in the successful onboarding
+                  of the first real user.
+                </p>
+              </li>
+            </ul>
+          </ExperienceCard>
+          <ExperienceCard
+            company="Microverse"
+            date="October, 2022 - October, 2023"
+            role="Code Reviewer"
+            techStack={['React', 'Ruby on Rails', 'TypeScript', 'GitHub']}
+          >
+            <ul className="mb-8 flex list-inside list-disc flex-col gap-4">
+              <li>
+                <p className="inline">
+                  Conducted over 120 code reviews and PR contributions, significantly improving code
+                  quality and fostering best practices among a global, cross-cultural team of junior
+                  developers in a fully remote environment.
+                </p>
+              </li>
+              <li>
+                <p className="inline">
+                  Mentored junior developers from diverse backgrounds, helping them overcome
+                  technical challenges and improving their coding proficiency, which led to a 30%
+                  reduction in common errors in their submitted projects.
+                </p>
+              </li>
+            </ul>
+          </ExperienceCard>
         </div>
       </section>
     </main>
