@@ -4,6 +4,7 @@ import MobileMenu from './mobile-menu'
 import Link from 'next/link'
 import Image from 'next/image'
 import memojiImg from '@/assets/images/memoji.webp'
+import { Suspense } from 'react'
 
 export default function NavigationBar() {
   return (
@@ -12,7 +13,9 @@ export default function NavigationBar() {
         <Link href="#home">
           <Logo />
         </Link>
-        <MobileMenu />
+        <Suspense fallback={null}>
+          <MobileMenu />
+        </Suspense>
         <ul className="hidden gap-6 md:flex">
           {MENU_LINKS.map((item) => (
             <li key={item.title}>
