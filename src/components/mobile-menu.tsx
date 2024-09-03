@@ -41,7 +41,7 @@ export default function MobileMenu() {
       <DrawerContent className="container py-4">
         <div className="flex h-10 items-center justify-between">
           <DrawerTitle>
-            <Link href="/" prefetch={true} onClick={closeMobileMenu}>
+            <Link href="#home" onClick={closeMobileMenu}>
               <Logo />
             </Link>
           </DrawerTitle>
@@ -56,7 +56,6 @@ export default function MobileMenu() {
             <li key={item.title}>
               <Link
                 href={item.path}
-                prefetch={true}
                 className="underline-offset-4 hover:text-black hover:underline"
                 onClick={closeMobileMenu}
               >

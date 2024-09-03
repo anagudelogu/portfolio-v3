@@ -9,14 +9,15 @@ export default function NavigationBar() {
   return (
     <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/10 shadow-sm backdrop-blur">
       <nav className="container flex w-full items-center justify-between py-4">
-        <Logo />
+        <Link href="#home">
+          <Logo />
+        </Link>
         <MobileMenu />
         <ul className="hidden gap-6 md:flex">
           {MENU_LINKS.map((item) => (
             <li key={item.title}>
               <Link
                 href={item.path}
-                prefetch={true}
                 className="font-serif underline-offset-4 transition-all hover:text-foreground/60 hover:underline"
               >
                 {item.title}

@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="!scroll-smooth">
       <body
         className={cn(
           'before:bg-pattern after:bg-gradient-decorations min-h-screen font-sans antialiased',

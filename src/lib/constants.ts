@@ -1,5 +1,5 @@
 export const MENU_LINKS = [
-  { title: 'About me', path: '#' },
-  { title: 'Experience', path: '#' },
-  { title: 'Contact', path: '#' }
+  { title: 'Experience', path: '#experience' },
+  { title: 'About me', path: '#about' },
+  { title: 'Contact', path: '#contact' }
 ]

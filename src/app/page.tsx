@@ -15,7 +15,7 @@ import memojiThumb from '@/assets/images/memoji-thumbsup.webp'
 export default function Home() {
   return (
     <main>
-      <section className="container py-32 md:py-48 lg:min-h-screen lg:py-60">
+      <section id="hero" className="container scroll-mt-20 py-32 md:py-48 lg:min-h-screen lg:py-60">
         <div className="flex flex-col items-center">
           <Image src={memojiImg} alt="Memoji" width={100} height={100} />
           <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container">
+      <section id="experience" className="container scroll-mt-20">
         <div className="flex justify-center">
           <h3 className="gradient-text font-serif text-sm font-bold uppercase">
             Real-world Impact
@@ -110,7 +110,7 @@ export default function Home() {
         <TechStackSlider />
       </div>
 
-      <section className="container pb-16 md:pb-32">
+      <section id="about" className="container scroll-mt-20 pb-16 md:pb-32">
         <div className="flex justify-center">
           <h3 className="gradient-text font-serif text-sm font-bold uppercase">Beyond the code</h3>
         </div>
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container pb-16 md:pb-32">
+      <section id="contact" className="container scroll-mt-20 pb-16 md:pb-32">
         <div className="flex justify-center">
           <h3 className="gradient-text font-serif text-sm font-bold uppercase">
             Interested in collaborating?
