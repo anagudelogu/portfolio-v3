@@ -2,13 +2,13 @@
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger
-} from './ui/drawer'
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger
+} from './ui/sheet'
 import Link from 'next/link'
 import Logo from './logo'
 import { useEffect, useState } from 'react'
@@ -34,23 +34,26 @@ export default function MobileMenu() {
   if (isDesktop) return null
 
   return (
-    <Drawer direction="left" open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
-      <DrawerTrigger className={buttonVariants({ variant: 'outline' })}>
+    <Sheet open={isOpen} onOpenChange={(open) => setIsOpen(open)}>
+      <SheetTrigger className={buttonVariants({ variant: 'outline' })}>
         <Bars3Icon className="h-4" />
-      </DrawerTrigger>
-      <DrawerContent className="container py-4">
+      </SheetTrigger>
+      <SheetContent
+        side="left"
+        className="container w-screen max-w-md py-4 min-[448px]:rounded-br-[10px] min-[448px]:rounded-tr-[10px]"
+      >
         <div className="flex h-10 items-center justify-between">
-          <DrawerTitle>
-            <Link href="#home" onClick={closeMobileMenu}>
+          <SheetTitle>
+            <Link href="/" onClick={closeMobileMenu}>
               <Logo />
             </Link>
-          </DrawerTitle>
+          </SheetTitle>
 
-          <DrawerClose className={`${buttonVariants({ variant: 'outline' })}`}>
+          <SheetClose className={`${buttonVariants({ variant: 'outline' })}`}>
             <XMarkIcon className="h-4" />
-          </DrawerClose>
+          </SheetClose>
         </div>
-        <DrawerDescription className="sr-only">Navigation</DrawerDescription>
+        <SheetDescription className="sr-only">Navigation</SheetDescription>
         <ul className="mt-10 flex flex-col gap-4 font-serif text-3xl font-semibold tracking-wider">
           {MENU_LINKS.map((item) => (
             <li key={item.title}>
@@ -64,7 +67,7 @@ export default function MobileMenu() {
             </li>
           ))}
         </ul>
-      </DrawerContent>
-    </Drawer>
+      </SheetContent>
+    </Sheet>
   )
 }

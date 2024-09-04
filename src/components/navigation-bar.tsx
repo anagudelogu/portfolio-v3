@@ -8,9 +8,9 @@ import { Suspense } from 'react'
 
 export default function NavigationBar() {
   return (
-    <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/10 shadow-sm backdrop-blur">
+    <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/50 shadow-sm backdrop-blur">
       <nav className="container flex w-full items-center justify-between py-4">
-        <Link href="#home">
+        <Link href="/">
           <Logo />
         </Link>
         <Suspense fallback={null}>
@@ -22,7 +22,7 @@ export default function NavigationBar() {
             <li key={item.title}>
               <Link
                 href={item.path}
-                className="font-serif underline-offset-4 transition-all hover:text-foreground/60 hover:underline"
+                className="font-serif font-medium underline-offset-4 transition-all hover:text-foreground/60 hover:underline"
               >
                 {item.title}
               </Link>
