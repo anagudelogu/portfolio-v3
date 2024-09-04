@@ -205,16 +205,33 @@ export default function Home() {
           Let&apos;s Talk!
         </h2>
 
-        <ul className="flex flex-col items-center md:flex-row md:justify-around">
-          <li className="flex items-center gap-4">
-            <EnvelopeIcon className="size-5" />
-            <h3 className="text-lg font-medium">Email</h3>
-          </li>
+        <ul className="flex flex-col items-center gap-4 md:flex-row md:justify-around">
           <li>
-            <h3 className="text-lg font-medium">LinkedIn</h3>
+            <Link
+              href="mailto:anagudelogu@gmail.com"
+              className="flex items-center gap-2.5 transition-all hover:scale-105 hover:text-foreground/60 md:gap-4"
+            >
+              <EnvelopeIcon className="size-5" />
+              <span className="text-lg font-medium">Email</span>
+            </Link>
           </li>
-          <li>
-            <h3 className="text-lg font-medium">GitHub</h3>
+          <li className="transition-all hover:scale-105">
+            <Link
+              href="https://www.linkedin.com/in/aagst/"
+              target="_blank"
+              className="text-lg font-medium transition-all hover:text-foreground/60 md:gap-4"
+            >
+              <span>LinkedIn</span>
+            </Link>
+          </li>
+          <li className="transition-all hover:scale-105">
+            <Link
+              href="https://github.com/anagudelogu"
+              target="_blank"
+              className="text-lg font-medium transition-all hover:text-foreground/60 md:gap-4"
+            >
+              GitHub
+            </Link>
           </li>
         </ul>
       </section>
