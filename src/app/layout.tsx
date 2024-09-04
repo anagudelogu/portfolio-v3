@@ -17,9 +17,51 @@ const fontSerif = FontSerif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://andresagudelo.dev'),
   title: 'Andres Agudelo | Frontend Developer',
   description:
-    'Frontend Developer with years of experience, passionate about crafting user-friendly interfaces and exploring cutting-edge web technologies.'
+    'Frontend Developer | React, TypeScript, Next.js | I Help Startups Boost User Engagement by Crafting Intuitive and Reliable User Experiences',
+  keywords: ['Frontend Developer', 'React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Redux'],
+  openGraph: {
+    siteName: 'Andres Agudelo | Frontend Developer',
+    type: 'website',
+    locale: 'en_US',
+    description:
+      'Frontend Developer | React, TypeScript, Next.js | I Help Startups Boost User Engagement by Crafting Intuitive and Reliable User Experiences',
+    images: [
+      {
+        url: 'https://andresagudelo.dev/memoji-pc.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Andres Agudelo | Frontend Developer'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Andres Agudelo | Frontend Developer',
+    description:
+      'Frontend Developer | React, TypeScript, Next.js | I Help Startups Boost User Engagement by Crafting Intuitive and Reliable User Experiences',
+    images: [
+      {
+        url: 'https://andresagudelo.dev/memoji-pc.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Andres Agudelo | Frontend Developer'
+      }
+    ]
+  },
+  alternates: {
+    canonical: 'https://andresagudelo.dev'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: 'index, follow'
+  }
 }
 
 export default function RootLayout({
