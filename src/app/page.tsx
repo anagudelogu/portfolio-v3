@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       <footer className="mb-6 flex justify-center">
-        <small className="text-foreground/40">Created by Andres Agudelo 2024.</small>
+        <small className="text-foreground">Created by Andres Agudelo 2024.</small>
       </footer>
     </main>
   )
