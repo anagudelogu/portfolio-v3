@@ -5,6 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import memojiImg from '@/assets/images/memoji.webp'
 import { Suspense } from 'react'
+import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
+import { buttonVariants } from './ui/button'
+import { cn } from '@/lib/utils'
 
 export default function NavigationBar() {
   return (
@@ -30,7 +33,43 @@ export default function NavigationBar() {
           ))}
         </ul>
         <div className="hidden transition-transform hover:rotate-12 md:block">
-          <Image src={memojiImg} alt="Memoji" width={40} height={40} />
+          <Popover>
+            <PopoverTrigger title="Social">
+              <Image src={memojiImg} alt="Memoji" width={40} height={40} />
+            </PopoverTrigger>
+            <PopoverContent align="end" className="w-fit p-1">
+              <ul className="flex flex-col">
+                <li className="transition-all hover:scale-105">
+                  <Link
+                    href="https://www.linkedin.com/in/aagst/"
+                    target="_blank"
+                    className={cn(
+                      buttonVariants({
+                        variant: 'ghost'
+                      }),
+                      'w-full justify-start font-bold'
+                    )}
+                  >
+                    <span>LinkedIn</span>
+                  </Link>
+                </li>
+                <li className="transition-all hover:scale-105">
+                  <Link
+                    href="https://github.com/anagudelogu"
+                    target="_blank"
+                    className={cn(
+                      buttonVariants({
+                        variant: 'ghost'
+                      }),
+                      'w-full justify-start font-bold'
+                    )}
+                  >
+                    GitHub
+                  </Link>
+                </li>
+              </ul>
+            </PopoverContent>
+          </Popover>
         </div>
       </nav>
     </div>
