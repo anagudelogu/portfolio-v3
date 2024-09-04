@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
 export default function NavigationBar() {
   return (
     <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/50 shadow-sm backdrop-blur">
-      <nav className="container flex w-full items-center justify-between py-4">
+      <nav className="container flex w-full grid-cols-[1fr_repeat(3,minmax(0,1fr))] items-center justify-between justify-self-start py-4 md:grid">
         <Link href="/">
           <Logo />
         </Link>
@@ -20,7 +20,7 @@ export default function NavigationBar() {
           <MobileMenu />
         </Suspense>
 
-        <ul className="hidden gap-6 md:flex">
+        <ul className="col-span-2 hidden gap-6 justify-self-center md:flex">
           {MENU_LINKS.map((item) => (
             <li key={item.title}>
               <Link
@@ -32,7 +32,7 @@ export default function NavigationBar() {
             </li>
           ))}
         </ul>
-        <div className="hidden transition-transform hover:rotate-12 md:block">
+        <div className="hidden justify-self-end transition-transform hover:rotate-12 md:block">
           <Popover>
             <PopoverTrigger title="Social">
               <Image src={memojiImg} alt="Memoji" width={40} height={40} />
