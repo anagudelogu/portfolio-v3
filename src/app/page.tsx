@@ -2,7 +2,7 @@ import memojiImg from '@/assets/images/memoji-pc.webp'
 import ExperienceCard from '@/components/experience.card'
 import FeaturedExperience from '@/components/featured-experience'
 import TechStackSlider from '@/components/tech-stack-slider'
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { ArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import personalPic from '@/assets/images/personal-pic.png'
@@ -11,6 +11,8 @@ import ghentPic from '@/assets/images/ghent.png'
 import ibizaPic from '@/assets/images/ibiza.png'
 import map from '@/assets/images/map.jpeg'
 import memojiThumb from '@/assets/images/memoji-thumbsup.webp'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 export default function Home() {
   return (
@@ -35,14 +37,26 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
-          <Button variant="outline" className="inline-flex items-center gap-2 font-semibold">
+          <Link
+            href="#experience"
+            className={cn(
+              buttonVariants({ variant: 'outline' }),
+              'inline-flex items-center gap-2 font-semibold'
+            )}
+          >
             <span>Explore My Work</span>
             <ArrowDownIcon className="size-4" />
-          </Button>
-          <Button className="inline-flex items-center gap-2 font-semibold">
+          </Link>
+          <Link
+            href="#contact"
+            className={cn(
+              buttonVariants({ variant: 'default' }),
+              'inline-flex items-center gap-2 font-semibold'
+            )}
+          >
             <span>Let&apos;s Connect</span>
             <span>👋</span>
-          </Button>
+          </Link>
         </div>
       </section>
 
