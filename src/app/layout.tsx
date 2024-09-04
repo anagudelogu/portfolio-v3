@@ -5,6 +5,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import NavigationBar from '@/components/navigation-bar'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -82,6 +83,7 @@ export default function RootLayout({
           <NavigationBar />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
