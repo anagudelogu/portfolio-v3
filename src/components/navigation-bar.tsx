@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
 
 export default function NavigationBar() {
   return (
-    <div className="fixed top-0 z-50 flex w-full items-center justify-center bg-background/50 shadow-sm backdrop-blur">
+    <div className="animate-header fixed left-0 right-0 top-0 z-[999] flex w-full items-center justify-center pb-8 pt-2 backdrop-blur-[10px] [animation-range:0_150px] [animation-timeline:scroll()] md:backdrop-blur-0">
       <nav className="container flex w-full grid-cols-[1fr_repeat(3,minmax(0,1fr))] items-center justify-between justify-self-start py-4 md:grid">
         <Link href="/">
           <Logo />
