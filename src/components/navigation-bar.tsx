@@ -1,17 +1,13 @@
 import { MENU_LINKS } from '@/lib/constants'
+import Link from 'next/link'
+import { Suspense } from 'react'
 import Logo from './logo'
 import MobileMenu from './mobile-menu'
-import Link from 'next/link'
-import Image from 'next/image'
-import memojiImg from '@/assets/images/memoji.webp'
-import { Suspense } from 'react'
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { buttonVariants } from './ui/button'
-import { cn } from '@/lib/utils'
+import SocialLinksPopover from './SocialLinksPopover'
 
 export default function NavigationBar() {
   return (
-    <div className="animate-header fixed left-0 right-0 top-0 z-[999] flex w-full items-center justify-center pb-8 pt-2 backdrop-blur-[10px] [animation-range:0_150px] [animation-timeline:scroll()] md:backdrop-blur-0">
+    <div className="fixed left-0 right-0 top-0 z-40 flex w-full animate-header items-center justify-center pb-8 pt-2 backdrop-blur-[10px] [animation-range:0_150px] [animation-timeline:scroll()] md:backdrop-blur-0">
       <nav className="container flex w-full grid-cols-[1fr_repeat(3,minmax(0,1fr))] items-center justify-between justify-self-start py-4 md:grid">
         <Link href="/">
           <Logo />
@@ -32,44 +28,8 @@ export default function NavigationBar() {
             </li>
           ))}
         </ul>
-        <div className="hidden justify-self-end transition-transform hover:rotate-12 md:block">
-          <Popover>
-            <PopoverTrigger title="Social">
-              <Image src={memojiImg} alt="Memoji" width={40} height={40} />
-            </PopoverTrigger>
-            <PopoverContent align="end" className="w-fit p-1">
-              <ul className="flex flex-col">
-                <li className="transition-all hover:scale-105">
-                  <Link
-                    href="https://www.linkedin.com/in/aagst/"
-                    target="_blank"
-                    className={cn(
-                      buttonVariants({
-                        variant: 'ghost'
-                      }),
-                      'w-full justify-start font-bold'
-                    )}
-                  >
-                    <span>LinkedIn</span>
-                  </Link>
-                </li>
-                <li className="transition-all hover:scale-105">
-                  <Link
-                    href="https://github.com/anagudelogu"
-                    target="_blank"
-                    className={cn(
-                      buttonVariants({
-                        variant: 'ghost'
-                      }),
-                      'w-full justify-start font-bold'
-                    )}
-                  >
-                    GitHub
-                  </Link>
-                </li>
-              </ul>
-            </PopoverContent>
-          </Popover>
+        <div className="hidden justify-self-end transition-transform md:block">
+          <SocialLinksPopover />
         </div>
       </nav>
     </div>
